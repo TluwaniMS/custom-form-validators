@@ -31,6 +31,9 @@ export class InputFormComponent implements OnInit {
           this.inputValidatorDirective.validate,
         ]),
       ],
+      email: ['', Validators.email, Validators.required],
+      password: ['', Validators.required],
+      passWordConfirmation: ['', Validators.required],
     });
   }
 
