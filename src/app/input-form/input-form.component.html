@@ -1,0 +1,18 @@
+<div class="main-card-input-container">
+  <mat-card>
+    <mat-card-header> Custom Form Validation </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input matInput />
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
