@@ -8,9 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { InputFormComponent } from './input-form/input-form.component';
+import { InputValidatorDirective } from './custom-form/input-validator.directive';
 
 @NgModule({
-  declarations: [AppComponent, InputFormComponent],
+  declarations: [AppComponent, InputFormComponent, InputValidatorDirective],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -19,7 +20,7 @@ import { InputFormComponent } from './input-form/input-form.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [InputValidatorDirective],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
