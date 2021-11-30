@@ -4,3 +4,11 @@
   align-items: center;
   margin-top: 20%;
 }
+
+.name-and-last-name-input-container {
+  display: flex;
+}
+
+.input-container {
+  margin: 8px;
+}
