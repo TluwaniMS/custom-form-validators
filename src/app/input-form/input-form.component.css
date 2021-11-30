@@ -1,3 +1,8 @@
+.mat-card-header {
+  padding: 10px;
+  justify-content: center;
+}
+
 .main-card-input-container {
   display: flex;
   justify-content: center;
@@ -11,4 +16,12 @@
 
 .input-container {
   margin: 8px;
+}
+
+.email-input-container .mat-form-field {
+  width: 100%;
+}
+
+.password-input-container {
+  display: flex;
 }
