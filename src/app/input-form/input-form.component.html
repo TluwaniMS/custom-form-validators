@@ -8,7 +8,9 @@
             <mat-form-field appearance="fill">
               <mat-label>Name</mat-label>
               <input matInput formControlName="name" />
-              <mat-error>Name is required</mat-error>
+              <mat-error *ngIf="nameForm.get('name').hasError('required')"
+                >Name is required</mat-error
+              >
             </mat-form-field>
           </div>
 
@@ -16,7 +18,9 @@
             <mat-form-field appearance="fill">
               <mat-label>Last Name</mat-label>
               <input matInput formControlName="lastName" />
-              <mat-error>Last name is required</mat-error>
+              <mat-error *ngIf="nameForm.get('lastName').hasError('required')"
+                >Last name is required</mat-error
+              >
             </mat-form-field>
           </div>
         </div>
@@ -25,8 +29,12 @@
             <mat-form-field appearance="fill">
               <mat-label>Email</mat-label>
               <input matInput formControlName="email" />
-              <mat-error>Email is required</mat-error>
-              <mat-error>Please enter a valid email</mat-error>
+              <mat-error *ngIf="nameForm.get('email').hasError('required')"
+                >Email is required</mat-error
+              >
+              <mat-error *ngIf="nameForm.get('email').hasError('email')"
+                >Please enter a valid email</mat-error
+              >
             </mat-form-field>
           </div>
         </div>
@@ -36,7 +44,9 @@
               <mat-label>Password</mat-label>
               <input matInput formControlName="password" />
               <mat-error>Please enter a password that contains</mat-error>
-              <mat-error>Password is required</mat-error>
+              <mat-error *ngIf="nameForm.get('password').hasError('required')"
+                >Password is required</mat-error
+              >
             </mat-form-field>
           </div>
 
