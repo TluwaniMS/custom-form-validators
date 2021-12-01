@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { InputValidatorDirective } from 'src/app/custom-form/input-validator.directive';
+import { InputValidatorDirective } from 'src/app/custom-form-validators/input-validator.directive';
 
 @Component({
   selector: 'app-input-form',
