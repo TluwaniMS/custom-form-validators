@@ -8,7 +8,7 @@
             <mat-form-field appearance="fill">
               <mat-label>Name</mat-label>
               <input matInput formControlName="name" />
-              <mat-error>name entered can not be used</mat-error>
+              <mat-error>Name is required</mat-error>
             </mat-form-field>
           </div>
 
@@ -16,7 +16,7 @@
             <mat-form-field appearance="fill">
               <mat-label>Last Name</mat-label>
               <input matInput formControlName="lastName" />
-              <mat-error>name entered can not be used</mat-error>
+              <mat-error>Last name is required</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -25,7 +25,8 @@
             <mat-form-field appearance="fill">
               <mat-label>Email</mat-label>
               <input matInput formControlName="email" />
-              <mat-error>name entered can not be used</mat-error>
+              <mat-error>Email is required</mat-error>
+              <mat-error>Please enter a valid email</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -34,7 +35,8 @@
             <mat-form-field appearance="fill">
               <mat-label>Password</mat-label>
               <input matInput formControlName="password" />
-              <mat-error>name entered can not be used</mat-error>
+              <mat-error>Please enter a password that contains</mat-error>
+              <mat-error>Password is required</mat-error>
             </mat-form-field>
           </div>
 
@@ -42,7 +44,7 @@
             <mat-form-field appearance="fill">
               <mat-label>Confirm Password</mat-label>
               <input matInput formControlName="passWordConfirmation" />
-              <mat-error>name entered can not be used</mat-error>
+              <mat-error>Passwords do not match</mat-error>
             </mat-form-field>
           </div>
         </div>
