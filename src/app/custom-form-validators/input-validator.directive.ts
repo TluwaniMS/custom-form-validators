@@ -15,7 +15,7 @@ import { invalidNames } from 'src/app/sample-data/sample-data';
 export class InputValidatorDirective implements Validator {
   validate(control: AbstractControl): { [key: string]: any } | null {
     if (invalidNames.includes(control.value)) {
-      return { phoneNumberInvalid: true };
+      return { nameIsInvalid: true };
     }
     return null;
   }

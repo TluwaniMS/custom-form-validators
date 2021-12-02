@@ -11,6 +11,9 @@
               <mat-error *ngIf="nameForm.get('name').hasError('required')"
                 >Name is required</mat-error
               >
+              <mat-error *ngIf="nameForm.get('name').hasError('nameIsInvalid')"
+                >Please enter a valid name</mat-error
+              >
             </mat-form-field>
           </div>
 
@@ -20,6 +23,10 @@
               <input matInput formControlName="lastName" />
               <mat-error *ngIf="nameForm.get('lastName').hasError('required')"
                 >Last name is required</mat-error
+              >
+              <mat-error
+                *ngIf="nameForm.get('lastName').hasError('nameIsInvalid')"
+                >Please enter a valid last name</mat-error
               >
             </mat-form-field>
           </div>
