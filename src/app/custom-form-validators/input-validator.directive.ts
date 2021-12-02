@@ -1,5 +1,6 @@
 import { Directive } from '@angular/core';
 import { AbstractControl, Validator, NG_VALIDATORS } from '@angular/forms';
+import { invalidNames } from 'src/app/sample-data/sample-data';
 
 @Directive({
   selector: '[appInputValidator]',
@@ -13,7 +14,7 @@ import { AbstractControl, Validator, NG_VALIDATORS } from '@angular/forms';
 })
 export class InputValidatorDirective implements Validator {
   validate(control: AbstractControl): { [key: string]: any } | null {
-    if (control.value === 'ben') {
+    if (invalidNames.includes(control.value)) {
       return { phoneNumberInvalid: true };
     }
     return null;
