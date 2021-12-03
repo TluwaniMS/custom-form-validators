@@ -11,6 +11,7 @@ import { InputFormComponent } from './input-form/input-form.component';
 import { InputValidatorDirective } from './custom-form-validators/input-validator.directive';
 import { PasswordValidatorDirective } from './custom-form-validators/password-validator.directive';
 import { PasswordConfirmationValidatorDirective } from './custom-form-validators/password-confirmation-validator.directive';
+import { PasswordValidationService } from 'src/app/services/password-validation-service.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PasswordConfirmationValidatorDirective } from './custom-form-validators
     InputValidatorDirective,
     PasswordValidatorDirective,
     PasswordConfirmationValidatorDirective,
+    PasswordValidationService,
   ],
   bootstrap: [AppComponent],
 })
