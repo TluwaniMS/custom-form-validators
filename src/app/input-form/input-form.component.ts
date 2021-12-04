@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InputValidatorDirective } from 'src/app/custom-form-validators/input-validator.directive';
+import { PasswordValidatorDirective } from 'src/app/custom-form-validators/password-validator.directive';
 
 @Component({
   selector: 'app-input-form',
@@ -12,7 +13,8 @@ export class InputFormComponent implements OnInit {
 
   constructor(
     public fb: FormBuilder,
-    private inputValidatorDirective: InputValidatorDirective
+    private inputValidatorDirective: InputValidatorDirective,
+    private passwordValidatorDirective: PasswordValidatorDirective
   ) {}
 
   ngOnInit(): void {
@@ -32,7 +34,13 @@ export class InputFormComponent implements OnInit {
         ]),
       ],
       email: ['', Validators.compose([Validators.email, Validators.required])],
-      password: ['', Validators.compose([Validators.required])],
+      password: [
+        '',
+        Validators.compose([
+          Validators.required,
+          this.passwordValidatorDirective.validate,
+        ]),
+      ],
       passWordConfirmation: ['', Validators.compose([Validators.required])],
     });
   }
