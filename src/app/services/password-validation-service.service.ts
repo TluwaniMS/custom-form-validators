@@ -12,7 +12,27 @@ import {
 export class PasswordValidationService {
   constructor() {}
 
-  validatePassword(password: string) {}
+  validatePassword(password: string) {
+    const passwordHasUpperCase = upperCaseLettersRegEx.test(password);
 
-  validatePasswordLength(password: string) {}
+    const passwordHasLowerCase = lowerCaseLettersRegEx.test(password);
+
+    const passwordHasNumerics = numericsRegEx.test(password);
+
+    const passwordHasSpecialCharacters = specialCharactersRegEx.test(password);
+
+    const requiredPasswordValuesAreSatisfied =
+      passwordHasUpperCase &&
+      passwordHasLowerCase &&
+      passwordHasNumerics &&
+      passwordHasSpecialCharacters;
+
+    return requiredPasswordValuesAreSatisfied;
+  }
+
+  validatePasswordLength(password: string) {
+    const passwordLenghtIsBiggerThanEight = password.length > 8;
+
+    return passwordLenghtIsBiggerThanEight;
+  }
 }
