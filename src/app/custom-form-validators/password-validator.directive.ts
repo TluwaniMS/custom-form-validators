@@ -1,6 +1,11 @@
 import { Directive } from '@angular/core';
 import { AbstractControl, Validator, NG_VALIDATORS } from '@angular/forms';
-import { PasswordValidationService } from 'src/app/services/password-validation-service.service';
+import {
+  specialCharactersRegEx,
+  lowerCaseLettersRegEx,
+  upperCaseLettersRegEx,
+  numericsRegEx,
+} from 'src/app/sample-data/sample-data';
 
 @Directive({
   selector: '[appPasswordConfirmationValidator]',
@@ -13,16 +18,28 @@ import { PasswordValidationService } from 'src/app/services/password-validation-
   ],
 })
 export class PasswordValidatorDirective implements Validator {
-  constructor(private passwordValidationService: PasswordValidationService) {}
   validate(control: AbstractControl): { [key: string]: any } | null {
-    const passwordValuesAreSatisfied =
-      this.passwordValidationService.validatePassword(control.value);
-    const passwordLengthIsSatisfied =
-      this.passwordValidationService.validatePasswordLength(control.value);
+    const passwordHasUpperCase = upperCaseLettersRegEx.test(control.value);
+
+    const passwordHasLowerCase = lowerCaseLettersRegEx.test(control.value);
+
+    const passwordHasNumerics = numericsRegEx.test(control.value);
+
+    const passwordHasSpecialCharacters = specialCharactersRegEx.test(
+      control.value
+    );
+
+    const requiredPasswordValuesAreSatisfied =
+      passwordHasUpperCase &&
+      passwordHasLowerCase &&
+      passwordHasNumerics &&
+      passwordHasSpecialCharacters;
+
+    const passwordLenghtIsBiggerThanEight = control.value.length >= 8;
 
     const passwordIsValid =
-      passwordValuesAreSatisfied && passwordLengthIsSatisfied;
+      requiredPasswordValuesAreSatisfied && passwordLenghtIsBiggerThanEight;
 
-    return passwordIsValid ? { passwordIsValidated: true } : null;
+    return !passwordIsValid ? { passwordIsValidated: true } : null;
   }
 }
