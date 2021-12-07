@@ -19,9 +19,15 @@ import {
 })
 export class PasswordConfirmationValidatorDirective implements Validator {
   validate(control: AbstractControl): { [key: string]: any } | null {
-    if (control.value) {
-      return { nameIsInvalid: true };
+    const password = control.get('password');
+    const passwordConfirmation = control.get('passWordConfirmation');
+
+    if (password === null || passwordConfirmation === null) {
+      return null;
     }
-    return null;
+
+    const passwordsMatch = password === passwordConfirmation;
+
+    return !passwordsMatch ? null : { passwordsDontMatch: true };
   }
 }
