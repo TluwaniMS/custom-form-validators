@@ -1,5 +1,8 @@
 # CustomFormValidators
 
+# About Repository:
+This is a basic angular project that I created to learn angular ReactiveForm concepts.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
 ## Development server
